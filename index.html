@@ -5,374 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JE Plugins - WordPress Blocks for Everyone</title>
     <meta name="description" content="Beautiful Gutenberg blocks for WordPress. Changelog Block, Roadmap Block, and more.">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1e293b;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #64748b;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #2563eb;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            background: linear-gradient(135deg, #eff6ff 0%, #f8fafc 100%);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #1e293b;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            color: #64748b;
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        /* Products */
-        .products {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 16px;
-            padding: 40px;
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .product-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
-
-        .product-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .product-card p {
-            color: #64748b;
-            margin-bottom: 20px;
-        }
-
-        .product-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .product-features li {
-            padding: 8px 0;
-            color: #475569;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .product-features li::before {
-            content: "✓";
-            color: #10b981;
-            font-weight: 700;
-        }
-
-        .product-price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 5px;
-        }
-
-        .product-price span {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #64748b;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: #2563eb;
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background: #1d4ed8;
-        }
-
-        .btn-secondary {
-            background: #f1f5f9;
-            color: #475569;
-        }
-
-        .btn-secondary:hover {
-            background: #e2e8f0;
-        }
-
-        .product-buttons {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .product-buttons .btn {
-            flex: 1;
-        }
-
-        /* Bundle */
-        .bundle {
-            padding: 80px 0;
-            background: #1e293b;
-            color: #ffffff;
-        }
-
-        .bundle-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .bundle h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .bundle p {
-            color: #94a3b8;
-            margin-bottom: 30px;
-        }
-
-        .bundle-price {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .bundle-price span {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #94a3b8;
-        }
-
-        .bundle-save {
-            display: inline-block;
-            background: #10b981;
-            color: #ffffff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        .btn-white {
-            background: #ffffff;
-            color: #1e293b;
-        }
-
-        .btn-white:hover {
-            background: #f1f5f9;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        footer a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
             }
         }
-    </style>
+    </script>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">JE Plugins</a>
-                <ul class="nav-links">
-                    <li><a href="/changelog-block">Changelog Block</a></li>
-                    <li><a href="/roadmap-block">Roadmap Block</a></li>
-                    <li><a href="mailto:jeplugins@gmail.com">Contact</a></li>
-                </ul>
+<body class="font-sans text-gray-800 antialiased">
+    <!-- Header -->
+    <header class="border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 py-5">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-2xl font-bold text-blue-600">JE Plugins</a>
+                <nav class="hidden md:flex gap-8">
+                    <a href="/changelog-block" class="text-gray-500 hover:text-blue-600 font-medium transition">Changelog Block</a>
+                    <a href="/roadmap-block" class="text-gray-500 hover:text-blue-600 font-medium transition">Roadmap Block</a>
+                    <a href="mailto:jeplugins@gmail.com" class="text-gray-500 hover:text-blue-600 font-medium transition">Contact</a>
+                </nav>
             </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>WordPress Blocks for Everyone</h1>
-            <p>Beautiful, easy-to-use Gutenberg blocks for changelogs, roadmaps, and more. Built for SaaS, startups, and product teams.</p>
-        </div>
-    </section>
-
-    <section class="products">
-        <div class="container">
-            <h2 class="section-title">Our Plugins</h2>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-icon">📋</div>
-                    <h3>Changelog Block</h3>
-                    <p>Display beautiful release notes and version history on your WordPress site.</p>
-                    <ul class="product-features">
-                        <li>3 Layouts (Timeline, Cards, List)</li>
-                        <li>6 Color Themes</li>
-                        <li>Custom Colors</li>
-                        <li>5 Change Types</li>
-                        <li>Collapsible Sections</li>
-                        <li>Filter by Type</li>
-                    </ul>
-                    <div class="product-price">$29 <span>/year</span></div>
-                    <p style="color: #64748b; font-size: 0.875rem;">3 sites included</p>
-                    <div class="product-buttons">
-                        <a href="/changelog-block" class="btn btn-secondary">Learn More</a>
-                        <a href="https://jeplugins.lemonsqueezy.com" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div class="product-icon">🗺️</div>
-                    <h3>Roadmap Block</h3>
-                    <p>Show your product roadmap with beautiful layouts and status tracking.</p>
-                    <ul class="product-features">
-                        <li>3 Layouts (List, Cards, Compact)</li>
-                        <li>6 Color Themes</li>
-                        <li>Custom Colors</li>
-                        <li>ETA Dates</li>
-                        <li>Progress Bar</li>
-                        <li>Filter by Status</li>
-                    </ul>
-                    <div class="product-price">$29 <span>/year</span></div>
-                    <p style="color: #64748b; font-size: 0.875rem;">3 sites included</p>
-                    <div class="product-buttons">
-                        <a href="/roadmap-block" class="btn btn-secondary">Learn More</a>
-                        <a href="https://jeplugins.lemonsqueezy.com" class="btn btn-primary">Buy Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="bundle">
-        <div class="container">
-            <div class="bundle-content">
-                <h2>🎁 Get All Plugins Bundle</h2>
-                <p>Get all current and future plugins at a discounted price. Best value for agencies and developers.</p>
-                <div class="bundle-price">$49 <span>/year</span></div>
-                <div class="bundle-save">Save $9</div>
-                <br><br>
-                <a href="https://jeplugins.lemonsqueezy.com" class="btn btn-white">Get Bundle →</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 JE Plugins. Built with ❤️ for WordPress.</p>
-            <p style="margin-top: 10px;">
-                <a href="mailto:jeplugins@gmail.com">Contact</a> · 
-                <a href="https://wordpress.org/plugins/je-changelog-block">WordPress.org</a>
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20 md:py-32">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                WordPress Blocks<br>
+                <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">for Everyone</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10">
+                Beautiful, easy-to-use Gutenberg blocks for changelogs, roadmaps, and more. Built for SaaS, startups, and product teams.
             </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#products" class="px-8 py-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition shadow-lg shadow-blue-600/30">
+                    View Products
+                </a>
+                <a href="https://jeplugins.lemonsqueezy.com" class="px-8 py-4 bg-white text-gray-700 font-semibold rounded-xl hover:bg-gray-50 transition border border-gray-200">
+                    Get Pro →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="py-20 md:py-28">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Our Plugins</h2>
+            <p class="text-gray-500 text-center mb-16 max-w-xl mx-auto">Professional WordPress blocks to help you communicate better with your users.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Changelog Block -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-2xl hover:shadow-amber-500/10 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl mb-6">📋</div>
+                    <h3 class="text-2xl font-bold mb-3">Changelog Block</h3>
+                    <p class="text-gray-500 mb-6">Display beautiful release notes and version history on your WordPress site.</p>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            3 Layouts (Timeline, Cards, List)
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            6 Color Themes
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            Collapsible Sections
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            Filter by Type
+                        </li>
+                    </ul>
+
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-4xl font-bold">$29</span>
+                        <span class="text-gray-500">/year</span>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <a href="/changelog-block" class="flex-1 py-3 px-4 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition text-center">Learn More</a>
+                        <a href="https://jeplugins.lemonsqueezy.com" class="flex-1 py-3 px-4 bg-amber-500 text-white font-semibold rounded-xl hover:bg-amber-600 transition text-center">Buy Now</a>
+                    </div>
+                </div>
+
+                <!-- Roadmap Block -->
+                <div class="bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-3xl mb-6">🗺️</div>
+                    <h3 class="text-2xl font-bold mb-3">Roadmap Block</h3>
+                    <p class="text-gray-500 mb-6">Show your product roadmap with beautiful layouts and status tracking.</p>
+                    
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            3 Layouts (List, Cards, Compact)
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            6 Color Themes
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            Progress Bar
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <span class="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center text-green-600 text-sm">✓</span>
+                            Filter by Status
+                        </li>
+                    </ul>
+
+                    <div class="flex items-baseline gap-2 mb-6">
+                        <span class="text-4xl font-bold">$29</span>
+                        <span class="text-gray-500">/year</span>
+                    </div>
+
+                    <div class="flex gap-3">
+                        <a href="/roadmap-block" class="flex-1 py-3 px-4 bg-gray-100 text-gray-700 font-semibold rounded-xl hover:bg-gray-200 transition text-center">Learn More</a>
+                        <a href="https://jeplugins.lemonsqueezy.com" class="flex-1 py-3 px-4 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition text-center">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bundle -->
+    <section class="bg-gradient-to-br from-gray-900 to-gray-800 py-20 md:py-28">
+        <div class="max-w-2xl mx-auto px-4 text-center">
+            <div class="inline-block px-4 py-2 bg-green-500/20 text-green-400 rounded-full text-sm font-semibold mb-6">
+                🎁 Best Value
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get All Plugins Bundle</h2>
+            <p class="text-gray-400 mb-8">Get all current and future plugins at a discounted price. Best value for agencies and developers.</p>
+            
+            <div class="text-5xl md:text-6xl font-bold text-white mb-2">
+                $49 <span class="text-2xl font-normal text-gray-400">/year</span>
+            </div>
+            <div class="inline-block px-4 py-1 bg-green-500 text-white rounded-full text-sm font-semibold mb-10">
+                Save $9
+            </div>
+            
+            <div>
+                <a href="https://jeplugins.lemonsqueezy.com" class="inline-block px-10 py-4 bg-white text-gray-900 font-semibold rounded-xl hover:bg-gray-100 transition shadow-lg">
+                    Get Bundle →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 md:py-28 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Why Choose JE Plugins?</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center p-6">
+                    <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-2">Gutenberg Native</h3>
+                    <p class="text-gray-500">Built specifically for the block editor. No shortcodes, no page builders.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-14 h-14 bg-purple-100 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">🎨</div>
+                    <h3 class="text-xl font-semibold mb-2">Beautiful Design</h3>
+                    <p class="text-gray-500">Professional themes and customization options to match your brand.</p>
+                </div>
+                <div class="text-center p-6">
+                    <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center text-2xl mx-auto mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-2">Fully Responsive</h3>
+                    <p class="text-gray-500">Looks perfect on desktop, tablet, and mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-100 py-10">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-500 mb-4">© 2025 JE Plugins. Built with ❤️ for WordPress.</p>
+            <div class="flex justify-center gap-6 text-sm">
+                <a href="mailto:jeplugins@gmail.com" class="text-gray-400 hover:text-blue-600 transition">Contact</a>
+                <a href="https://wordpress.org/plugins/je-changelog-block" class="text-gray-400 hover:text-blue-600 transition">WordPress.org</a>
+            </div>
         </div>
     </footer>
 </body>
