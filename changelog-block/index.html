@@ -1,501 +1,500 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html
+  lang="en"
+  class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
     <title>JE Changelog Block - Beautiful Release Notes for WordPress</title>
-    <meta name="description" content="Display beautiful changelogs and release notes on your WordPress site. 3 layouts, 6 themes, and more.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1e293b;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            padding: 20px 0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #64748b;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: #2563eb;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #fef3c7 0%, #fefce8 100%);
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #1e293b;
-        }
-
-        .hero p {
-            font-size: 1.125rem;
-            color: #64748b;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.2s;
-        }
-
-        .btn-primary {
-            background: #f59e0b;
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background: #d97706;
-        }
-
-        .btn-secondary {
-            background: #ffffff;
-            color: #475569;
-            border: 1px solid #e2e8f0;
-        }
-
-        .btn-secondary:hover {
-            background: #f8fafc;
-        }
-
-        .hero-image {
-            background: #ffffff;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-        }
-
-        .hero-image img {
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        .placeholder-image {
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            border-radius: 8px;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 1.125rem;
-        }
-
-        /* Features */
-        .features {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 50px;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .feature-card p {
-            color: #64748b;
-            font-size: 0.9375rem;
-        }
-
-        /* Free vs Pro */
-        .comparison {
-            padding: 80px 0;
-            background: #f8fafc;
-        }
-
-        .comparison-table {
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto;
-            border-collapse: collapse;
-            background: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .comparison-table th,
-        .comparison-table td {
-            padding: 16px 24px;
-            text-align: left;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .comparison-table th {
-            background: #1e293b;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .comparison-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .check {
-            color: #10b981;
-            font-weight: 700;
-        }
-
-        .cross {
-            color: #ef4444;
-        }
-
-        /* Pricing */
-        .pricing {
-            padding: 80px 0;
-        }
-
-        .pricing-card {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #ffffff;
-            border: 2px solid #f59e0b;
-            border-radius: 16px;
-            padding: 40px;
-            text-align: center;
-        }
-
-        .pricing-badge {
-            display: inline-block;
-            background: #f59e0b;
-            color: #ffffff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-
-        .pricing-price {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .pricing-price span {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #64748b;
-        }
-
-        .pricing-sites {
-            color: #64748b;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features {
-            list-style: none;
-            text-align: left;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pricing-features li::before {
-            content: "✓";
-            color: #10b981;
-            font-weight: 700;
-        }
-
-        .btn-large {
-            display: block;
-            padding: 16px 32px;
-            font-size: 1.125rem;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        footer a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="/" class="logo">JE Plugins</a>
-                <ul class="nav-links">
-                    <li><a href="/changelog-block" class="active">Changelog Block</a></li>
-                    <li><a href="/roadmap-block">Roadmap Block</a></li>
-                    <li><a href="mailto:jeplugins@gmail.com">Contact</a></li>
-                </ul>
-            </div>
+    <meta
+      name="description"
+      content="Display beautiful changelogs and release notes on your WordPress site. 3 layouts, 6 themes, and more." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Poppins", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    class="font-sans text-gray-800 dark:text-gray-200 antialiased bg-white dark:bg-gray-900 transition-colors duration-300">
+    <!-- Header -->
+    <header class="border-b border-gray-100 dark:border-gray-800">
+      <div class="max-w-6xl mx-auto px-4 py-5">
+        <div class="flex justify-between items-center">
+          <a
+            href="/"
+            class="text-2xl font-bold text-blue-600 dark:text-blue-400"
+            >JE Plugins</a
+          >
+          <div class="flex items-center gap-6">
+            <nav class="hidden md:flex gap-8">
+              <a
+                href="/changelog-block"
+                class="text-blue-600 dark:text-blue-400 font-medium"
+                >Changelog Block</a
+              >
+              <a
+                href="/roadmap-block"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
+                >Roadmap Block</a
+              >
+              <a
+                href="mailto:jeplugins@gmail.com"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
+                >Contact</a
+              >
+            </nav>
+            <!-- Dark Mode Toggle -->
+            <button
+              id="theme-toggle"
+              class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+              <svg
+                class="w-5 h-5 hidden dark:block text-yellow-400"
+                fill="currentColor"
+                viewBox="0 0 20 20">
+                <path
+                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" />
+              </svg>
+              <svg
+                class="w-5 h-5 block dark:hidden text-gray-600"
+                fill="currentColor"
+                viewBox="0 0 20 20">
+                <path
+                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div>
-                    <h1>📋 JE Changelog Block</h1>
-                    <p>Display beautiful release notes and version history on your WordPress site. Perfect for SaaS, plugins, themes, and apps.</p>
-                    <div class="hero-buttons">
-                        <a href="https://jeplugins.lemonsqueezy.com" class="btn btn-primary">Buy Pro - $29/year</a>
-                        <a href="https://wordpress.org/plugins/je-changelog-block" class="btn btn-secondary">Free Version</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="placeholder-image">📋 Screenshot Coming Soon</div>
-                </div>
+    <!-- Hero -->
+    <section
+      class="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div
+              class="inline-block px-4 py-2 bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full text-sm font-semibold mb-6">
+              📋 Changelog Block
             </div>
-        </div>
-    </section>
-
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Features</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">📐</div>
-                    <h3>3 Layouts</h3>
-                    <p>Timeline, Cards, and List layouts to match your design.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎨</div>
-                    <h3>6 Color Themes</h3>
-                    <p>Pre-designed themes or customize your own colors.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏷️</div>
-                    <h3>5 Change Types</h3>
-                    <p>Added, Changed, Fixed, Removed, Security labels.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Responsive</h3>
-                    <p>Looks great on desktop, tablet, and mobile.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔽</div>
-                    <h3>Collapsible</h3>
-                    <p>Expand/collapse sections for long changelogs.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔍</div>
-                    <h3>Filter by Type</h3>
-                    <p>Let users filter by change type.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="comparison">
-        <div class="container">
-            <h2 class="section-title">Free vs Pro</h2>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Feature</th>
-                        <th>Free</th>
-                        <th>Pro</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>3 Layouts</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>5 Change Types</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Responsive Design</td>
-                        <td class="check">✓</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>6 Color Themes</td>
-                        <td class="cross">✗</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Custom Colors</td>
-                        <td class="cross">✗</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Collapsible Sections</td>
-                        <td class="cross">✗</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Anchor Links</td>
-                        <td class="cross">✗</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Filter by Type</td>
-                        <td class="cross">✗</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Show More/Less</td>
-                        <td class="cross">✗</td>
-                        <td class="check">✓</td>
-                    </tr>
-                    <tr>
-                        <td>Rich Text Formatting</td>
-                        <td class="cross">✗</td>
-                        <td class="check">✓</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="pricing">
-        <div class="container">
-            <h2 class="section-title">Pricing</h2>
-            <div class="pricing-card">
-                <div class="pricing-badge">Pro Version</div>
-                <div class="pricing-price">$29 <span>/year</span></div>
-                <p class="pricing-sites">Use on up to 3 sites</p>
-                <ul class="pricing-features">
-                    <li>All Pro Features</li>
-                    <li>1 Year of Updates</li>
-                    <li>Email Support</li>
-                    <li>14-Day Money Back</li>
-                </ul>
-                <a href="https://jeplugins.lemonsqueezy.com" class="btn btn-primary btn-large">Buy Now →</a>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>© 2025 JE Plugins. Built with ❤️ for WordPress.</p>
-            <p style="margin-top: 10px;">
-                <a href="/">Home</a> · 
-                <a href="mailto:jeplugins@gmail.com">Contact</a>
+            <h1
+              class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              Beautiful Release Notes for WordPress
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+              Display changelogs and version history with stunning layouts.
+              Perfect for SaaS, plugins, themes, and apps.
             </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="https://jeplugins.lemonsqueezy.com"
+                class="px-8 py-4 bg-amber-500 text-white font-semibold rounded-xl hover:bg-amber-600 transition shadow-lg shadow-amber-500/30 text-center">
+                Buy Pro - $29/year
+              </a>
+              <a
+                href="https://wordpress.org/plugins/je-changelog-block"
+                class="px-8 py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-semibold rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition border border-gray-200 dark:border-gray-700 text-center">
+                Free Version
+              </a>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl shadow-amber-500/10 dark:shadow-amber-500/5 p-6">
+            <div
+              class="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-700 dark:to-gray-800 rounded-xl h-72 flex items-center justify-center text-gray-400">
+              📋 Screenshot Coming Soon
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          Features
+        </h2>
+        <p
+          class="text-gray-500 dark:text-gray-400 text-center mb-16 max-w-xl mx-auto">
+          Everything you need to showcase your product updates beautifully.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
+            <div
+              class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center text-2xl mb-4">
+              📐
+            </div>
+            <h3
+              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              3 Layouts
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Timeline, Cards, and List layouts to match your design.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
+            <div
+              class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center text-2xl mb-4">
+              🎨
+            </div>
+            <h3
+              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              6 Color Themes
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Pre-designed themes or customize your own colors.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
+            <div
+              class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center text-2xl mb-4">
+              🏷️
+            </div>
+            <h3
+              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              5 Change Types
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Added, Changed, Fixed, Removed, Security labels.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
+            <div
+              class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center text-2xl mb-4">
+              📱
+            </div>
+            <h3
+              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              Responsive
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Looks great on desktop, tablet, and mobile.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
+            <div
+              class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center text-2xl mb-4">
+              🔽
+            </div>
+            <h3
+              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              Collapsible
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Expand/collapse sections for long changelogs.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
+            <div
+              class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center text-2xl mb-4">
+              🔍
+            </div>
+            <h3
+              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              Filter by Type
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Let users filter by change type.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          Free vs Pro
+        </h2>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gray-900 text-white">
+                <th class="py-4 px-6 text-left font-semibold">Feature</th>
+                <th class="py-4 px-6 text-center font-semibold">Free</th>
+                <th class="py-4 px-6 text-center font-semibold bg-amber-500">
+                  Pro
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  3 Layouts
+                </td>
+                <td class="py-4 px-6 text-center text-green-500 font-bold">
+                  ✓
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  5 Change Types
+                </td>
+                <td class="py-4 px-6 text-center text-green-500 font-bold">
+                  ✓
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  Responsive Design
+                </td>
+                <td class="py-4 px-6 text-center text-green-500 font-bold">
+                  ✓
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  6 Color Themes
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
+                  ✗
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  Custom Colors
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
+                  ✗
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  Collapsible Sections
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
+                  ✗
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  Anchor Links
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
+                  ✗
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  Filter by Type
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
+                  ✗
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  Show More/Less
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
+                  ✗
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
+                  Rich Text Formatting
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
+                  ✗
+                </td>
+                <td
+                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
+                  ✓
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+      <div class="max-w-md mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          Pricing
+        </h2>
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-2xl border-2 border-amber-500 p-8 text-center shadow-xl shadow-amber-500/10">
+          <div
+            class="inline-block px-4 py-1 bg-amber-500 text-white rounded-full text-sm font-semibold mb-6">
+            Pro Version
+          </div>
+          <div class="text-5xl font-bold mb-2 text-gray-900 dark:text-white">
+            $29
+            <span class="text-xl font-normal text-gray-500 dark:text-gray-400"
+              >/year</span
+            >
+          </div>
+          <p class="text-gray-500 dark:text-gray-400 mb-8">
+            Use on up to 3 sites
+          </p>
+
+          <ul class="text-left space-y-4 mb-8">
+            <li
+              class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+              <span
+                class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
+                >✓</span
+              >
+              All Pro Features
+            </li>
+            <li
+              class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+              <span
+                class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
+                >✓</span
+              >
+              1 Year of Updates
+            </li>
+            <li
+              class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+              <span
+                class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
+                >✓</span
+              >
+              Email Support
+            </li>
+            <li
+              class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+              <span
+                class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
+                >✓</span
+              >
+              14-Day Money Back
+            </li>
+          </ul>
+
+          <a
+            href="https://jeplugins.lemonsqueezy.com"
+            class="block w-full py-4 bg-amber-500 text-white font-semibold rounded-xl hover:bg-amber-600 transition shadow-lg">
+            Buy Now →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      class="border-t border-gray-100 dark:border-gray-800 py-10 bg-white dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <p class="text-gray-500 dark:text-gray-400 mb-4">© 2025 JE Plugins. Built with ❤️ for WordPress.</p>
+        <div class="flex justify-center gap-6 text-sm">
+          <a
+            href="/"
+            class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Home</a
+          >
+          <a
+            href="mailto:jeplugins@gmail.com"
+            class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            >Contact</a
+          >
+        </div>
+      </div>
     </footer>
-</body>
+
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+      themeToggle.addEventListener("click", () => {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.theme = "light";
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.theme = "dark";
+        }
+      });
+    </script>
+  </body>
 </html>
