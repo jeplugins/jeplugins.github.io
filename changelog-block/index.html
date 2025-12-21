@@ -10,10 +10,30 @@
     <title>JE Changelog Block - Beautiful Release Notes for WordPress</title>
     <meta
       name="description"
+      content="Display beautiful changelogs and release notes on your WordPress site. 3 layouts, 6 themes, and more. Built for WordPress." />
+    <meta
+      name="keywords"
+      content="wordpress changelog, release notes, version history, gutenberg block, wordpress plugin" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="JE Changelog Block - Beautiful Release Notes for WordPress" />
+    <meta
+      property="og:description"
       content="Display beautiful changelogs and release notes on your WordPress site. 3 layouts, 6 themes, and more." />
+    <meta
+      property="og:type"
+      content="website" />
+    <meta
+      property="og:url"
+      content="https://jeplugins.github.io/changelog-block" />
+
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <link
       rel="preconnect"
       href="https://fonts.googleapis.com" />
@@ -50,8 +70,9 @@
   </head>
   <body
     class="font-sans text-gray-800 dark:text-gray-200 antialiased bg-white dark:bg-gray-900 transition-colors duration-300">
-    <!-- Header -->
-    <header class="border-b border-gray-100 dark:border-gray-800">
+    <!-- Header (Sticky) -->
+    <header
+      class="border-b border-gray-100 dark:border-gray-800 sticky top-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg z-50">
       <div class="max-w-6xl mx-auto px-4 py-5">
         <div class="flex justify-between items-center">
           <a
@@ -61,22 +82,22 @@
           >
           <div class="flex items-center gap-6">
             <nav class="hidden md:flex gap-8">
-            <a
-              href="/changelog-block"
-              class="text-amber-600 dark:text-amber-400 font-medium"
-              >Changelog Block</a
-            >
-            <a
-              href="/roadmap-block"
-              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
-              >Roadmap Block</a
-            >
-            <a
-              href="/request-block"
-              class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
-              >Request Block</a>
-            <a href="/cdn-cgi/l/email-protection#244e41544851434d4a57644349454d480a474b49" class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition">Contact</a>
-          </nav>
+              <a
+                href="/changelog-block"
+                class="text-amber-600 dark:text-amber-400 font-medium"
+                >Changelog Block</a
+              >
+              <a
+                href="/roadmap-block"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
+                >Roadmap Block</a
+              >
+              <a
+                href="/request-block"
+                class="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 font-medium transition"
+                >Request Block</a
+              >
+            </nav>
             <!-- Dark Mode Toggle -->
             <button
               id="theme-toggle"
@@ -112,8 +133,11 @@
               <i class="bi bi-journal-text mr-2"></i>Changelog Block
             </div>
             <h1
-              class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              Beautiful Release Notes for WordPress
+              class="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+              Beautiful Release Notes <br class="hidden md:block" />
+              <span class="text-amber-600 dark:text-amber-400"
+                >Built for WordPress</span
+              >
             </h1>
             <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
               Display changelogs and version history with stunning layouts.
@@ -131,14 +155,233 @@
                 Free Version
               </a>
             </div>
+            <!-- Watch Demo Link -->
+            <div class="mt-4">
+              <a
+                href="#demo-video"
+                class="inline-flex items-center gap-2 text-amber-600 dark:text-amber-400 font-medium hover:underline">
+                <i class="bi bi-play-circle-fill text-xl"></i>
+                Watch Demo (2 min)
+              </a>
+            </div>
+            <!-- Trust Badges -->
+            <div
+              class="flex flex-wrap items-center gap-6 mt-8 text-sm text-gray-500 dark:text-gray-400">
+              <span class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                Gutenberg Native
+              </span>
+              <span class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                14-Day Money Back
+              </span>
+              <span class="flex items-center gap-2">
+                <svg
+                  class="w-5 h-5 text-green-500"
+                  fill="currentColor"
+                  viewBox="0 0 20 20">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clip-rule="evenodd" />
+                </svg>
+                No Monthly Fees
+              </span>
+            </div>
           </div>
-          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl shadow-amber-500/10 dark:shadow-amber-500/5 p-6">
-            <img 
-              src="/changelog.jpg" 
-              alt="JE Changelog Block Screenshot" 
-              class="rounded-xl w-full"
-            />
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl shadow-amber-500/10 dark:shadow-amber-500/5 p-6">
+            <img
+              src="changelog.jpg"
+              alt="JE Changelog Block Screenshot"
+              class="rounded-xl w-full" />
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          Why Choose JE Changelog Block
+        </h2>
+        <p
+          class="text-gray-500 dark:text-gray-400 text-center mb-16 max-w-xl mx-auto">
+          A changelog solution built specifically for WordPress users.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- No External Dependencies -->
+          <div
+            class="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
+            <div
+              class="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <i
+                class="bi bi-shield-lock text-3xl text-amber-600 dark:text-amber-400"></i>
+            </div>
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              No External Dependencies
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Everything runs on your WordPress. No third-party services, no
+              data leaving your server.
+            </p>
+          </div>
+          <!-- Keep Users Updated -->
+          <div
+            class="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
+            <div
+              class="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <i
+                class="bi bi-bell text-3xl text-orange-600 dark:text-orange-400"></i>
+            </div>
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              Keep Users Updated
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Show your users what's new. Build transparency and engagement with
+              every release.
+            </p>
+          </div>
+          <!-- Native WordPress Block -->
+          <div
+            class="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-100 dark:border-gray-700 text-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <i
+                class="bi bi-lightning-charge text-3xl text-yellow-600 dark:text-yellow-400"></i>
+            </div>
+            <h3
+              class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+              Native WordPress Block
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Built for Gutenberg editor. No shortcodes, no embeds — just drag,
+              drop, and publish.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          How It Works
+        </h2>
+        <p
+          class="text-gray-500 dark:text-gray-400 text-center mb-16 max-w-xl mx-auto">
+          Simple setup, powerful results. Get started in minutes.
+        </p>
+
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Step 1 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i
+                class="bi bi-1-circle text-3xl text-amber-600 dark:text-amber-400"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+              Add Block
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Insert the Changelog block to any page using Gutenberg editor
+            </p>
+          </div>
+          <!-- Step 2 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i
+                class="bi bi-2-circle text-3xl text-orange-600 dark:text-orange-400"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+              Add Versions
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Add changelog entries with version, date, and change items
+            </p>
+          </div>
+          <!-- Step 3 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i
+                class="bi bi-3-circle text-3xl text-yellow-600 dark:text-yellow-400"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+              Choose Layout
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Pick from Timeline, Cards, or Compact layout to match your design
+            </p>
+          </div>
+          <!-- Step 4 -->
+          <div class="text-center">
+            <div
+              class="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <i
+                class="bi bi-4-circle text-3xl text-green-600 dark:text-green-400"></i>
+            </div>
+            <h3 class="font-semibold text-gray-900 dark:text-white mb-2">
+              Publish
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Share your changelog with users and keep them informed
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Video Demo -->
+    <section
+      id="demo-video"
+      class="py-20 bg-gray-50 dark:bg-gray-800">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">
+          Watch It In Action
+        </h2>
+        <p
+          class="text-gray-500 dark:text-gray-400 text-center mb-12 max-w-xl mx-auto">
+          See how easy it is to set up and use JE Changelog Block in just 2
+          minutes.
+        </p>
+
+        <!-- Video Container -->
+        <div
+          class="relative bg-gray-900 rounded-2xl overflow-hidden shadow-2xl aspect-video">
+          <!-- Google Drive Video Embed -->
+          <iframe
+            class="absolute inset-0 w-full h-full"
+            src="https://drive.google.com/file/d/1FoMDues7bli_NZp54G1JH6XZ5GOs4YGq/preview"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+          </iframe>
         </div>
       </div>
     </section>
@@ -161,7 +404,8 @@
             class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div
               class="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center mb-4">
-              <i class="bi bi-layout-three-columns text-2xl text-amber-600 dark:text-amber-400"></i>
+              <i
+                class="bi bi-layout-three-columns text-2xl text-amber-600 dark:text-amber-400"></i>
             </div>
             <h3
               class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
@@ -176,74 +420,79 @@
             class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div
               class="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-xl flex items-center justify-center mb-4">
-              <i class="bi bi-palette text-2xl text-purple-600 dark:text-purple-400"></i>
+              <i
+                class="bi bi-palette text-2xl text-purple-600 dark:text-purple-400"></i>
             </div>
             <h3
               class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
               6 Color Themes
             </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Pre-designed themes or customize your own colors.
+              Choose from 6 beautiful themes or customize your own colors.
             </p>
           </div>
-          <!-- 5 Change Types -->
+          <!-- Collapsible Sections -->
           <div
             class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div
               class="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-xl flex items-center justify-center mb-4">
-              <i class="bi bi-tags text-2xl text-blue-600 dark:text-blue-400"></i>
+              <i
+                class="bi bi-arrows-collapse text-2xl text-blue-600 dark:text-blue-400"></i>
             </div>
             <h3
               class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-              5 Change Types
+              Collapsible Sections
             </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              New, Fix, Improved, Breaking, Deprecated labels.
+              Let users expand/collapse changelog entries for better UX.
             </p>
           </div>
-          <!-- Responsive -->
+          <!-- Anchor Links -->
           <div
             class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div
               class="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-xl flex items-center justify-center mb-4">
-              <i class="bi bi-phone text-2xl text-green-600 dark:text-green-400"></i>
+              <i
+                class="bi bi-link-45deg text-2xl text-green-600 dark:text-green-400"></i>
             </div>
             <h3
               class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-              Responsive
+              Anchor Links
             </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Looks great on desktop, tablet, and mobile.
-            </p>
-          </div>
-          <!-- Collapsible -->
-          <div
-            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
-            <div
-              class="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-xl flex items-center justify-center mb-4">
-              <i class="bi bi-arrows-collapse text-2xl text-red-600 dark:text-red-400"></i>
-            </div>
-            <h3
-              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
-              Collapsible
-            </h3>
-            <p class="text-gray-500 dark:text-gray-400">
-              Expand/collapse sections for long changelogs.
+              Direct links to specific versions for easy sharing.
             </p>
           </div>
           <!-- Filter by Type -->
           <div
             class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
             <div
-              class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/30 rounded-xl flex items-center justify-center mb-4">
-              <i class="bi bi-funnel text-2xl text-indigo-600 dark:text-indigo-400"></i>
+              class="w-12 h-12 bg-cyan-100 dark:bg-cyan-900/30 rounded-xl flex items-center justify-center mb-4">
+              <i
+                class="bi bi-funnel text-2xl text-cyan-600 dark:text-cyan-400"></i>
             </div>
             <h3
               class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
               Filter by Type
             </h3>
             <p class="text-gray-500 dark:text-gray-400">
-              Let users filter by change type.
+              Filter by Added, Changed, Fixed, or Removed items.
+            </p>
+          </div>
+          <!-- Show More/Less -->
+          <div
+            class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-100 dark:border-gray-700 p-6 hover:shadow-lg transition">
+            <div
+              class="w-12 h-12 bg-rose-100 dark:bg-rose-900/30 rounded-xl flex items-center justify-center mb-4">
+              <i
+                class="bi bi-three-dots text-2xl text-rose-600 dark:text-rose-400"></i>
+            </div>
+            <h3
+              class="text-lg font-semibold mb-2 text-gray-900 dark:text-white">
+              Show More/Less
+            </h3>
+            <p class="text-gray-500 dark:text-gray-400">
+              Limit visible entries with a "Show More" button.
             </p>
           </div>
         </div>
@@ -251,21 +500,32 @@
     </section>
 
     <!-- Comparison -->
-    <section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
       <div class="max-w-4xl mx-auto px-4">
         <h2
-          class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
+          class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">
           Free vs Pro
         </h2>
+        <p
+          class="text-gray-500 dark:text-gray-400 text-center mb-12 max-w-xl mx-auto">
+          Start free, upgrade when you need more.
+        </p>
 
         <div
-          class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
+          class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700">
           <table class="w-full">
-            <thead>
-              <tr class="bg-gray-900 text-white">
-                <th class="py-4 px-6 text-left font-semibold">Feature</th>
-                <th class="py-4 px-6 text-center font-semibold">Free</th>
-                <th class="py-4 px-6 text-center font-semibold bg-amber-500">
+            <thead class="bg-gray-50 dark:bg-gray-800">
+              <tr>
+                <th
+                  class="py-4 px-6 text-left text-gray-900 dark:text-white font-semibold">
+                  Feature
+                </th>
+                <th
+                  class="py-4 px-6 text-center text-gray-900 dark:text-white font-semibold">
+                  Free
+                </th>
+                <th
+                  class="py-4 px-6 text-center text-gray-900 dark:text-white font-semibold bg-amber-50 dark:bg-amber-900/20">
                   Pro
                 </th>
               </tr>
@@ -273,7 +533,7 @@
             <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
               <tr>
                 <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
-                  Timeline Layout
+                  3 Layouts
                 </td>
                 <td class="py-4 px-6 text-center text-green-500 font-bold">
                   ✓
@@ -285,20 +545,7 @@
               </tr>
               <tr>
                 <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
-                  Cards & Compact Layouts
-                </td>
-                <td
-                  class="py-4 px-6 text-center text-gray-300 dark:text-gray-600">
-                  ✗
-                </td>
-                <td
-                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
-                  ✓
-                </td>
-              </tr>
-              <tr>
-                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
-                  5 Change Types
+                  4 Change Types
                 </td>
                 <td class="py-4 px-6 text-center text-green-500 font-bold">
                   ✓
@@ -310,19 +557,7 @@
               </tr>
               <tr>
                 <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
-                  Rich Text Formatting
-                </td>
-                <td class="py-4 px-6 text-center text-green-500 font-bold">
-                  ✓
-                </td>
-                <td
-                  class="py-4 px-6 text-center text-green-500 font-bold bg-amber-50 dark:bg-amber-900/20">
-                  ✓
-                </td>
-              </tr>
-              <tr>
-                <td class="py-4 px-6 text-gray-700 dark:text-gray-300">
-                  Responsive Design
+                  Title & Description
                 </td>
                 <td class="py-4 px-6 text-center text-green-500 font-bold">
                   ✓
@@ -434,7 +669,7 @@
       <div class="max-w-md mx-auto px-4">
         <h2
           class="text-3xl md:text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-          Pricing
+          Simple Pricing
         </h2>
 
         <div
@@ -458,40 +693,69 @@
               class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
               <span
                 class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
-                ><i class="bi bi-check-lg"></i></span
-              >
+                ><i class="bi bi-check-lg"></i
+              ></span>
               All Pro Features
             </li>
             <li
               class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
               <span
                 class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
-                ><i class="bi bi-check-lg"></i></span
-              >
+                ><i class="bi bi-check-lg"></i
+              ></span>
               1 Year of Updates
             </li>
             <li
               class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
               <span
                 class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
-                ><i class="bi bi-check-lg"></i></span
-              >
+                ><i class="bi bi-check-lg"></i
+              ></span>
               Email Support
             </li>
             <li
               class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
               <span
                 class="w-6 h-6 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center text-green-600 dark:text-green-400 text-sm"
-                ><i class="bi bi-check-lg"></i></span
-              >
-              14-Day Money Back
+                ><i class="bi bi-check-lg"></i
+              ></span>
+              14-Day Money Back Guarantee
             </li>
           </ul>
 
           <a
             href="https://je-plugins.lemonsqueezy.com/checkout/buy/27f4a22e-88a3-453c-b89f-ff28e64e97f3"
-            class="block w-full py-4 bg-amber-500 text-white font-semibold rounded-xl hover:bg-amber-600 transition shadow-lg">
+            class="block w-full py-4 bg-amber-500 text-white font-semibold rounded-xl hover:bg-amber-600 transition shadow-lg mb-4">
             Buy Now →
+          </a>
+          <a
+            href="https://wordpress.org/plugins/je-changelog-block"
+            class="block w-full py-3 text-amber-600 dark:text-amber-400 font-medium hover:underline">
+            Or try Free Version first
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-gradient-to-br from-amber-500 to-orange-600">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Start Sharing Your Updates Today
+        </h2>
+        <p class="text-amber-100 mb-8 text-lg">
+          Keep your users informed. Show them what's new with every release.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://je-plugins.lemonsqueezy.com/checkout/buy/27f4a22e-88a3-453c-b89f-ff28e64e97f3"
+            class="px-8 py-4 bg-white text-amber-600 font-semibold rounded-xl hover:bg-amber-50 transition shadow-lg text-center">
+            Get Pro - $29/year
+          </a>
+          <a
+            href="https://wordpress.org/plugins/je-changelog-block"
+            class="px-8 py-4 bg-amber-400 text-white font-semibold rounded-xl hover:bg-amber-300 transition border border-amber-300 text-center">
+            Try Free Version
           </a>
         </div>
       </div>
@@ -501,16 +765,29 @@
     <footer
       class="border-t border-gray-100 dark:border-gray-800 py-10 bg-white dark:bg-gray-900">
       <div class="max-w-6xl mx-auto px-4 text-center">
-        <p class="text-gray-500 dark:text-gray-400 mb-4">© 2025 JE Plugins. Built with <i class="bi bi-heart-fill text-red-500"></i> for WordPress.</p>
+        <p class="text-gray-500 dark:text-gray-400 mb-4">
+          © 2025 JE Plugins. Built with
+          <i class="bi bi-heart-fill text-red-500"></i> for WordPress.
+        </p>
         <div class="flex justify-center gap-6 text-sm">
           <a
             href="/"
-            class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            class="text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition"
             >Home</a
           >
           <a
+            href="/roadmap-block"
+            class="text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition"
+            >Roadmap Block</a
+          >
+          <a
+            href="/request-block"
+            class="text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition"
+            >Request Block</a
+          >
+          <a
             href="mailto:jeplugins@gmail.com"
-            class="text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition"
+            class="text-gray-400 hover:text-amber-600 dark:hover:text-amber-400 transition"
             >Contact</a
           >
         </div>
